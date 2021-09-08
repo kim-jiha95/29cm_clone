@@ -8,7 +8,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+<com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/bottomNavigationView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:menu="@menu/bottom_navigation_menu"
+    app:itemBackground="@color/white"
+    app:itemIconTint="@android:color/black"
+    app:itemTextColor="@android:color/black"/>
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/shoppage_toolbar_search"
@@ -77,17 +86,17 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="sans-serif"
                 android:text="Home"
+                android:layout_marginLeft="15dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/login_accountsetting_tv_gender"
-                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/login_accountsetting_tv_gender"
+                android:id="@+id/best"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -96,7 +105,6 @@
                 android:text="Best"
                 android:textColor="#F7171616"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="parent"
@@ -110,15 +118,16 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tab_category">
+            app:layout_constraintTop_toBottomOf="@id/tab_category"
+            >
 
 
             <TextView
                 android:id="@+id/Women"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="26dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="56dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="sans-serif"
@@ -126,26 +135,27 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/Men"
-                app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                />
 
             <TextView
                 android:id="@+id/Men"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
+                android:layout_marginStart="156dp"
+
+                android:layout_marginLeft="156dp"
+                android:layout_marginBottom="16dp"
                 android:fontFamily="sans-serif"
                 android:text="MEN"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toEndOf="@+id/Women"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/Women" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -174,13 +184,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <Button
+                <TextView
                     android:id="@+id/a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:layout_marginLeft="15dp"
                     android:text="의류"
-                    android:background="@drawable/border_under"
                     app:layout_constraintHorizontal_chainStyle="spread"
 
 
@@ -188,108 +198,232 @@
                     app:layout_constraintHorizontal_bias="0.049"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/c" />
-                <Button
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_image"/>
+
+                <TextView
                     android:id="@+id/b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:layout_marginLeft="105dp"
                     android:text="의류"
-                    android:background="@drawable/border_under"
+
                     app:layout_constraintHorizontal_chainStyle="spread"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.396"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/a"
                     app:layout_constraintTop_toTopOf="@+id/d" />
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_image"/>
+
+
+
+
             </LinearLayout>
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="15dp"
+
+                    android:src="@drawable/border_under"
+                    ></ImageView>
+                <ImageView
+                    android:layout_marginLeft="100dp"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    ></ImageView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <Button
+                <TextView
                     android:id="@+id/c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="가방"
-                    android:background="@drawable/border_under"
+                    android:layout_marginLeft="15dp"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.049"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/e" />
-                <Button
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_image"/>
+                <TextView
                     android:id="@+id/d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:layout_marginLeft="105dp"
                     android:text="가방"
-                    android:background="@drawable/border_under"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.396"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="id/c"
                     app:layout_constraintTop_toTopOf="@+id/f" />
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_image"/>
+
             </LinearLayout>
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    android:layout_marginLeft="15dp"
+
+                    ></ImageView>
+                <ImageView
+                    android:layout_marginLeft="95dp"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    ></ImageView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <Button
+                <TextView
                     android:id="@+id/e"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="신발"
-                    android:background="@drawable/border_under"
+                    android:layout_marginLeft="15dp"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.049"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/b" />
-                <Button
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_image"/>
+                <TextView
                     android:id="@+id/f"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="신발"
-                    android:background="@drawable/border_under"
-
+android:layout_marginLeft="105dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.396"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="id/e"
                     app:layout_constraintTop_toTopOf="@+id/c" />
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_image"/>
 
             </LinearLayout>
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    android:layout_marginLeft="15dp"
+
+                    ></ImageView>
+                <ImageView
+                    android:layout_marginLeft="95dp"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    ></ImageView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <Button
+                <TextView
                     android:id="@+id/g"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="액세서리"
-                    android:background="@drawable/border_under"
+                    android:layout_marginLeft="15dp"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.049"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/b" />
-                <Button
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_image"/>
+                <TextView
                     android:id="@+id/h"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="액세서리"
-                    android:background="@drawable/border_under"
-
+                    android:layout_marginLeft="105dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.396"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/g"
                     app:layout_constraintTop_toTopOf="@+id/c" />
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_image"/>
 
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    android:layout_marginLeft="15dp"
+
+                    ></ImageView>
+                <ImageView
+                    android:layout_marginLeft="95dp"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    ></ImageView>
             </LinearLayout>
 
         </LinearLayout>
@@ -309,7 +443,7 @@
         android:id="@+id/life_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="220dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -321,6 +455,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border_under"
             android:fontFamily="sans-serif"
+            android:layout_marginLeft="15dp"
             android:text="LIFE"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -352,58 +487,116 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <Button
+            <TextView
                 android:id="@+id/p"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="홈"
-                android:background="@drawable/border_under"
+                android:layout_marginLeft="15dp"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.049"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/i" />
-            <Button
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_marginLeft="70dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/plus_image"/>
+            <TextView
                 android:id="@+id/o"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="뷰티"
-                android:background="@drawable/border_under"
-
+                android:layout_marginLeft="105dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.396"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/p"
                 app:layout_constraintTop_toTopOf="@+id/u" />
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_marginLeft="60dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/plus_image"/>
         </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    android:layout_marginLeft="15dp"
+
+                    ></ImageView>
+                <ImageView
+                    android:layout_marginLeft="95dp"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    ></ImageView>
+            </LinearLayout>
         <LinearLayout
+            android:layout_marginTop="10dp"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <Button
+            <TextView
                 android:id="@+id/i"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="테크"
-                android:background="@drawable/border_under"
+                android:layout_marginLeft="15dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.049"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/e" />
-            <Button
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_marginLeft="60dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/plus_image"/>
+            <TextView
                 android:id="@+id/u"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginLeft="105dp"
                 android:text="컬처"
-                android:background="@drawable/border_under"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.396"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/i"
                 app:layout_constraintTop_toTopOf="@+id/f" />
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_marginLeft="60dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/plus_image"/>
         </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    android:layout_marginLeft="15dp"
+
+                    ></ImageView>
+                <ImageView
+                    android:layout_marginLeft="95dp"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/border_under"
+                    ></ImageView>
+            </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -433,26 +626,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/life_category">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/event"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/round_button"
             android:backgroundTint="@color/white"
             android:text="event"
             android:textColor="@color/black"
             android:textSize="8sp"
             app:layout_constraintEnd_toStartOf="@+id/brand"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/event_button"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/brand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:backgroundTint="@color/white"
+            android:background="@drawable/round_button"
+
             android:text="brand"
             android:textColor="@color/black"
             android:textSize="8sp"
@@ -461,11 +655,11 @@
             app:layout_constraintStart_toEndOf="@+id/event"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/lookbook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/round_button"
             android:backgroundTint="@color/white"
             android:text="lookbook"
             android:textColor="@color/black"

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_home"
+        android:enabled="true"
+        android:icon="@drawable/home_"
+        android:title="HOME"/>
+
+    <item
+        android:id="@+id/page_shop"
+        android:enabled="true"
+        android:icon="@drawable/shop"
+        android:title="SHOP"/>
+
+    <item
+        android:id="@+id/page_welove"
+        android:enabled="true"
+        android:icon="@drawable/welove"
+        android:title="WELOVE"/>
+    <item
+        android:id="@+id/like"
+        android:enabled="true"
+        android:icon="@drawable/heart"
+        android:title="LIKE"/>
+    <item
+        android:id="@+id/my"
+        android:enabled="true"
+        android:icon="@drawable/my"
+        android:title="MY"/>
+</menu>
