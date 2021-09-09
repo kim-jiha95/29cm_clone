@@ -8,36 +8,44 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container"></FrameLayout>
 <com.google.android.material.bottomnavigation.BottomNavigationView
     android:id="@+id/bottomNavigationView"
+    android:layout_alignParentBottom="true"
+    android:background="#EFEFEF"
+    app:itemIconTint="#"
+    app:itemTextColor="@color/black"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_gravity="start"
+    app:labelVisibilityMode="labeled"
     app:menu="@menu/bottom_navigation_menu"
-    app:itemBackground="@color/white"
-    app:itemIconTint="@android:color/black"
-    app:itemTextColor="@android:color/black"/>
+    />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/shoppage_toolbar_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#68FFFFFF"
+            android:background="@color/white"
             android:minHeight="?android:attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.Toolbar>
+            app:layout_constraintTop_toTopOf="parent">
+        </androidx.appcompat.widget.Toolbar>
 
         <View
             android:id="@+id/search_view"
             android:layout_width="345dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="15dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/search_tab"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="#EFEFEF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,10 +53,10 @@
             android:id="@+id/button3"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="332dp"
+            android:layout_marginStart="323dp"
             android:layout_marginLeft="312dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/search_icon"
+            android:layout_marginTop="11dp"
+            android:src="@drawable/search_03"
             app:layout_constraintBottom_toBottomOf="@+id/shoppage_toolbar_search"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -56,11 +64,11 @@
 
         <ImageButton
             android:id="@+id/bagbutton"
-            android:layout_width="25dp"
+            android:layout_width="23dp"
             android:layout_height="27dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/bag_icon"
+            android:src="@drawable/bagbutton2"
             app:layout_constraintBottom_toBottomOf="@+id/shoppage_toolbar_search"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -95,14 +103,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
+            <ImageButton
                 android:id="@+id/best"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="55dp"
+                android:layout_height="17dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="17dp"
                 android:layout_marginBottom="16dp"
-                android:text="Best"
+                android:src="@drawable/best2"
                 android:textColor="#F7171616"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_chainStyle="packed"
@@ -132,6 +140,7 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="sans-serif"
                 android:text="Women"
+                android:textSize="25sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -145,12 +154,13 @@
                 android:id="@+id/Men"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="156dp"
+                android:layout_marginStart="115dp"
 
-                android:layout_marginLeft="156dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="sans-serif"
                 android:text="MEN"
+                android:textSize="25sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -191,6 +201,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="15dp"
                     android:text="의류"
+                    android:textColor="@color/black"
+
                     app:layout_constraintHorizontal_chainStyle="spread"
 
 
@@ -201,7 +213,8 @@
 
                 <ImageView
                     android:layout_width="10dp"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="120dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus_image"/>
 
@@ -210,8 +223,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginLeft="105dp"
+                    android:layout_marginLeft="40dp"
                     android:text="의류"
+                    android:textColor="@color/black"
+
 
                     app:layout_constraintHorizontal_chainStyle="spread"
 
@@ -221,7 +236,9 @@
                     app:layout_constraintTop_toTopOf="@+id/d" />
                 <ImageView
                     android:layout_width="10dp"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="115dp"
+                    android:layout_marginTop="5dp"
+
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus_image"/>
 
@@ -230,19 +247,19 @@
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="500dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:layout_marginLeft="15dp"
 
                     android:src="@drawable/border_under"
                     ></ImageView>
                 <ImageView
-                    android:layout_marginLeft="100dp"
-                    android:layout_width="100dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:src="@drawable/border_under"
                     ></ImageView>
@@ -259,6 +276,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="가방"
+                    android:textColor="@color/black"
+
                     android:layout_marginLeft="15dp"
 
                     app:layout_constraintEnd_toEndOf="parent"
@@ -267,7 +286,7 @@
                     app:layout_constraintTop_toTopOf="@+id/e" />
                 <ImageView
                     android:layout_width="10dp"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="120dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus_image"/>
                 <TextView
@@ -275,8 +294,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginLeft="105dp"
+                    android:layout_marginLeft="40dp"
                     android:text="가방"
+                    android:textColor="@color/black"
+
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.396"
@@ -284,7 +305,7 @@
                     app:layout_constraintTop_toTopOf="@+id/f" />
                 <ImageView
                     android:layout_width="10dp"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="115dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus_image"/>
 
@@ -294,15 +315,15 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:src="@drawable/border_under"
                     android:layout_marginLeft="15dp"
 
                     ></ImageView>
                 <ImageView
-                    android:layout_marginLeft="95dp"
-                    android:layout_width="100dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:src="@drawable/border_under"
                     ></ImageView>
@@ -319,6 +340,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="신발"
+                    android:textColor="@color/black"
+
                     android:layout_marginLeft="15dp"
 
                     app:layout_constraintEnd_toEndOf="parent"
@@ -327,7 +350,7 @@
                     app:layout_constraintTop_toTopOf="@+id/b" />
                 <ImageView
                     android:layout_width="10dp"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="120dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus_image"/>
                 <TextView
@@ -336,14 +359,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="신발"
-android:layout_marginLeft="105dp"
+                    android:textColor="@color/black"
+
+                    android:layout_marginLeft="40dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.396"
                     app:layout_constraintStart_toStartOf="id/e"
                     app:layout_constraintTop_toTopOf="@+id/c" />
                 <ImageView
                     android:layout_width="10dp"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="115dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus_image"/>
 
@@ -353,15 +378,15 @@ android:layout_marginLeft="105dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:src="@drawable/border_under"
                     android:layout_marginLeft="15dp"
 
                     ></ImageView>
                 <ImageView
-                    android:layout_marginLeft="95dp"
-                    android:layout_width="100dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:src="@drawable/border_under"
                     ></ImageView>
@@ -379,6 +404,7 @@ android:layout_marginLeft="105dp"
                     android:layout_marginTop="8dp"
                     android:text="액세서리"
                     android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.049"
@@ -386,7 +412,7 @@ android:layout_marginLeft="105dp"
                     app:layout_constraintTop_toTopOf="@+id/b" />
                 <ImageView
                     android:layout_width="10dp"
-                    android:layout_marginLeft="34dp"
+                    android:layout_marginLeft="95dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus_image"/>
                 <TextView
@@ -395,14 +421,16 @@ android:layout_marginLeft="105dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="액세서리"
-                    android:layout_marginLeft="105dp"
+                    android:textColor="@color/black"
+
+                    android:layout_marginLeft="38dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.396"
                     app:layout_constraintStart_toStartOf="@id/g"
                     app:layout_constraintTop_toTopOf="@+id/c" />
                 <ImageView
                     android:layout_width="10dp"
-                    android:layout_marginLeft="35dp"
+                    android:layout_marginLeft="90dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus_image"/>
 
@@ -412,15 +440,15 @@ android:layout_marginLeft="105dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:src="@drawable/border_under"
                     android:layout_marginLeft="15dp"
 
                     ></ImageView>
                 <ImageView
-                    android:layout_marginLeft="95dp"
-                    android:layout_width="100dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:src="@drawable/border_under"
                     ></ImageView>
@@ -453,12 +481,12 @@ android:layout_marginLeft="105dp"
             android:id="@+id/lifetext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/border_under"
             android:fontFamily="sans-serif"
             android:layout_marginLeft="15dp"
             android:text="LIFE"
+            android:textSize="25sp"
+
             android:textColor="@color/black"
-            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -476,7 +504,7 @@ android:layout_marginLeft="105dp"
         app:layout_constraintTop_toBottomOf="@id/life_category">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -494,6 +522,7 @@ android:layout_marginLeft="105dp"
                 android:layout_marginTop="8dp"
                 android:text="홈"
                 android:layout_marginLeft="15dp"
+                android:textColor="@color/black"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.049"
@@ -501,7 +530,7 @@ android:layout_marginLeft="105dp"
                 app:layout_constraintTop_toTopOf="@+id/i" />
             <ImageView
                 android:layout_width="10dp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="135dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/plus_image"/>
             <TextView
@@ -510,14 +539,15 @@ android:layout_marginLeft="105dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="뷰티"
-                android:layout_marginLeft="105dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.396"
                 app:layout_constraintStart_toStartOf="@id/p"
                 app:layout_constraintTop_toTopOf="@+id/u" />
             <ImageView
                 android:layout_width="10dp"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="110dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/plus_image"/>
         </LinearLayout>
@@ -526,15 +556,15 @@ android:layout_marginLeft="105dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:src="@drawable/border_under"
                     android:layout_marginLeft="15dp"
 
                     ></ImageView>
                 <ImageView
-                    android:layout_marginLeft="95dp"
-                    android:layout_width="100dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_width="160dp"
                     android:layout_height="10dp"
                     android:src="@drawable/border_under"
                     ></ImageView>
@@ -551,6 +581,8 @@ android:layout_marginLeft="105dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="테크"
+                android:textColor="@color/black"
+
                 android:layout_marginLeft="15dp"
 
                 app:layout_constraintEnd_toEndOf="parent"
@@ -559,7 +591,7 @@ android:layout_marginLeft="105dp"
                 app:layout_constraintTop_toTopOf="@+id/e" />
             <ImageView
                 android:layout_width="10dp"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="122dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/plus_image"/>
             <TextView
@@ -567,36 +599,21 @@ android:layout_marginLeft="105dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="105dp"
+                android:layout_marginLeft="40dp"
                 android:text="컬처"
+                android:textColor="@color/black"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.396"
                 app:layout_constraintStart_toStartOf="@id/i"
                 app:layout_constraintTop_toTopOf="@+id/f" />
             <ImageView
                 android:layout_width="10dp"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="110dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/plus_image"/>
         </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="10dp"
-                    android:src="@drawable/border_under"
-                    android:layout_marginLeft="15dp"
 
-                    ></ImageView>
-                <ImageView
-                    android:layout_marginLeft="95dp"
-                    android:layout_width="100dp"
-                    android:layout_height="10dp"
-                    android:src="@drawable/border_under"
-                    ></ImageView>
-            </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -616,10 +633,10 @@ android:layout_marginLeft="105dp"
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/event_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="128dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -628,50 +645,177 @@ android:layout_marginLeft="105dp"
 
         <Button
             android:id="@+id/event"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20sp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/white"
             android:text="event"
             android:textColor="@color/black"
             android:textSize="8sp"
-            app:layout_constraintEnd_toStartOf="@+id/brand"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="@id/event_button"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textAllCaps="false"
+            />
 
         <Button
             android:id="@+id/brand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20sp"
             android:backgroundTint="@color/white"
             android:background="@drawable/round_button"
 
             android:text="brand"
             android:textColor="@color/black"
             android:textSize="8sp"
-            app:layout_constraintEnd_toStartOf="@+id/lookbook"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@+id/event"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textAllCaps="false"
+           />
 
         <Button
             android:id="@+id/lookbook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20sp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/white"
             android:text="lookbook"
             android:textColor="@color/black"
             android:textSize="8sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@+id/brand"
+            android:textAllCaps="false"
+           />
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gray_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_button"
+        >
+
+
+        <View
+            android:id="@+id/gray_view"
+            android:layout_width="450dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/search_tab"
+            android:backgroundTint="#EFEFEF"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/specialboxx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gray_box"
+        >
+
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specialboxx">
+
+
+
+
+
+        <TextView
+            android:id="@+id/odertextx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:layout_marginLeft="30dp"
+            android:text="Special-Order"
+
+            android:textSize="25sp"
+
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <ImageView
+            android:layout_marginTop="15dp"
+            android:layout_width="150dp"
+            android:layout_marginLeft="80dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/all"/>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/specialpic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/specialboxx">
+
+        <LinearLayout
+            android:layout_margin="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="specialboxx"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/special1"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/special2"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/special5"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/special6"/>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
